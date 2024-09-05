@@ -46,25 +46,26 @@ Ensure you have [Node.js](https://nodejs.org/) installed on your machine. You wi
 
 or
 
-    ```bash
-    yarn install
+   ```bash
+   yarn install
 
-    ```
+   ```
 
 
 
 ### ▶️ Running the Application
 To start the server, run:
-    ```bash
-    npm start
 
-    ```
+   ```bash
+   npm start
+
+   ```
 
 or, if you're using yarn:
 
-    ```bash
-    yarn start
+   ```bash
+   yarn start
 
-    ```
+   ```
 
 The server will start on the default port `3000`. You can change the port by setting the environment variable `PORT`.
