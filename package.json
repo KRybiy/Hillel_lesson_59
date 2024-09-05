@@ -1,0 +1,11 @@
+{
+  "name": "hillel-express",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "dependencies": {
+    "celebrate": "^15.0.3",
+    "express": "^4.19.2",
+    "joi": "^17.13.3"
+  }
+}
