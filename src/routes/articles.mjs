@@ -6,10 +6,11 @@ import {
   deleteArticleByIdHandler,
   putArticleByIdHandler,
 } from "../controllers/articles.mjs";
+import { checkArticleAccess } from "../middlewares/accessControl.mjs";
 
 const articlesRouter = Router();
 
-articlesRouter.route("/").get(getArticlesHandler).post(postArticlesHandler);
+articlesRouter.route("/").get(checkArticleAccess,getArticlesHandler).post(postArticlesHandler);
 
 articlesRouter
   .route("/:articleId")
