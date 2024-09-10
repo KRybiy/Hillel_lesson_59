@@ -16,8 +16,21 @@ This is a simple Express application with routes and controllers for managing ar
     │ │ ├── articles.mjs
     │ │ ├── users.mjs
     │ │ └── root.mjs
+    │ ├── middlewares/
+    │ │ ├── accessControl.mjs
+    │ │ ├── auth.mjs
+    │ │ └── logging.mjs
     │ ├── validators/
     │ │ └── userValidator.mjs
+    │ ├── public/css
+    │ │ └── styles.css
+    │ ├── views/
+    │ │ ├── articles
+    │ │ │ ├── index.mjs
+    │ │ │ ├── detail.mjs
+    │ │ └── users
+    │ │ │ ├── index.mjs
+    │ │ │ └──  detail.mjs
     ├── package.json
     └── README.md
 

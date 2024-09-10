@@ -4,6 +4,7 @@ import { errors } from "celebrate";
 import chalk from "chalk";
 import morgan from "morgan";
 import { logRequests } from "./middlewares/logging.mjs";
+import consolidate from "consolidate";
 
 const PORT = 3000;
 const app = express();
@@ -12,6 +13,13 @@ app.use(morgan('tiny'));
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(logRequests)
+app.use(express.static('src/public'));
+
+// Configure view engines using consolidate
+app.engine('ejs', consolidate.ejs);
+app.engine('pug', consolidate.pug);
+app.set('views', './src/views'); // Set the directory for templates
+
 
 app.use(express.json());
 app.use(router)

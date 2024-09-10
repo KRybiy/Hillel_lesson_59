@@ -12,7 +12,7 @@ import { basicAuth } from "../middlewares/auth.mjs";
 
 const usersRouter = Router();
 
-usersRouter.use(basicAuth)
+//usersRouter.use(basicAuth)
 usersRouter.route("/").get(getUsersHandler).post(validateUserPost, postUsersHandler);
 usersRouter
   .route("/:userId")
