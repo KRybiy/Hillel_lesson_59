@@ -5,10 +5,12 @@ import chalk from "chalk";
 import morgan from "morgan";
 import { logRequests } from "./middlewares/logging.mjs";
 import consolidate from "consolidate";
+import cookieParser from "cookie-parser";
 
 const PORT = 3000;
 const app = express();
 
+app.use(cookieParser());
 app.use(morgan('tiny'));
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
@@ -21,7 +23,6 @@ app.engine('pug', consolidate.pug);
 app.set('views', './src/views'); // Set the directory for templates
 
 
-app.use(express.json());
 app.use(router)
 app.use(errors())
 app.use((error, req, res, next) => {

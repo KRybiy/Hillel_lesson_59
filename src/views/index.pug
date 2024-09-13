@@ -1,0 +1,14 @@
+doctype html
+html(lang="en")
+  head
+    meta(charset="UTF-8")
+    title Theme Selector
+    style
+      | body { background-color: #{theme === 'dark' ? '#333' : '#fff'}; color: #{theme === 'dark' ? '#fff' : '#000'}; }
+  body
+    h1 Welcome to the Theme Selector
+    form(action="/set-theme", method="post")
+      select(name="theme")
+        option(value="light" selected=theme === 'light') Light
+        option(value="dark" selected=theme === 'dark') Dark
+      button(type="submit") Set Theme
