@@ -1,0 +1,12 @@
+doctype html
+html(lang="en")
+  head
+    meta(charset="UTF-8")
+    title Register
+  body
+    h1 Register
+    form(action="/users/register", method="post")
+      input(type="text", name="name", placeholder="Name", required=true)
+      input(type="email", name="email", placeholder="Email", required=true)
+      input(type="password", name="password", placeholder="Password", required=true)
+      button(type="submit") Register

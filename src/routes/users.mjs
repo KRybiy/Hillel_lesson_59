@@ -5,14 +5,25 @@ import {
   getUserByIdHandler,
   deleteUserByIdHandler,
   putUserByIdHandler,
+  registerHandler,
+  loginHandler,
+  verifyToken
 } from "../controllers/users.mjs";
 import { validateUserPost, validateUserPut, validateParamsUserId } from "../validators/userValidator.mjs";
-import { basicAuth } from "../middlewares/auth.mjs";
-
 
 const usersRouter = Router();
 
-//usersRouter.use(basicAuth)
+// Public routes
+usersRouter.post('/register', registerHandler);
+usersRouter.post('/login', loginHandler);
+
+// Protected routes
+usersRouter.use(verifyToken); // Apply JWT verification middleware
+
+usersRouter.get('/register', (req, res) => {
+  res.render('users/register.pug');
+});
+
 usersRouter.route("/").get(getUsersHandler).post(validateUserPost, postUsersHandler);
 usersRouter
   .route("/:userId")
