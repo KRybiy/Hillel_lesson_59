@@ -26,11 +26,13 @@ This is a simple Express application with routes and controllers for managing ar
     │ │ └── styles.css
     │ ├── views/
     │ │ ├── articles
-    │ │ │ ├── index.mjs
-    │ │ │ ├── detail.mjs
+    │ │ │ ├── index.ejs
+    │ │ │ ├── detail.ejs
     │ │ └── users
-    │ │ │ ├── index.mjs
-    │ │ │ └──  detail.mjs
+    │ │ │ ├── register.pug
+    │ │ │ ├── index.pug
+    │ │ │ └── detail.pug
+    │ │ └── index.pug
     ├── package.json
     └── README.md
 
